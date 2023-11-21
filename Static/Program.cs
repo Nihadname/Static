@@ -10,3 +10,5 @@ user.ShowInfo();
 User user1 = new(FullName, Email, Password);
 Console.WriteLine(user1.PasswordChecker(Password));
 user1.ShowInfo();
+Student student = new(FullName,78);
+student.StudentInfo();
