@@ -10,7 +10,7 @@ namespace Static.Models
 {
     public class User: IAccount
     {
-        public static int IdCounter;
+        private static int IdCounter;
         public int Id;
         public string FullName { get; set; }
         public string Email { get; set; }
