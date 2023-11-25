@@ -14,7 +14,21 @@ namespace Static.Models
         public int Id;
         public string FullName { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
+        private string _Password;
+        public string Password { get{ 
+            return _Password;
+            } set {
+                if (PasswordChecker(value))
+                {
+                    _Password = value;
+                    Console.WriteLine("duzdur");
+                }
+                else
+                {
+                    Console.WriteLine("sehvdir");
+                }
+            }
+        }
         public User(string fullName, string email, string password)
         {
             IdCounter++;
@@ -28,16 +42,16 @@ namespace Static.Models
         {
             string passwordPattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$";
             Regex regex = new Regex(passwordPattern);
-            bool IsItValid = regex.IsMatch(password);
-            if (IsItValid == true)
-            {
+           return regex.IsMatch(password);
+            //if (IsItValid == true)
+            //{
 
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
 
 
         }
