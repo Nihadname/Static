@@ -43,15 +43,7 @@ namespace Static.Models
             string passwordPattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$";
             Regex regex = new Regex(passwordPattern);
            return regex.IsMatch(password);
-            //if (IsItValid == true)
-            //{
-
-            //    return true;
-            //}
-            //else
-            //{
-            //    return false;
-            //}
+            
 
 
         }
